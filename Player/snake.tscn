@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bodg0vs3pki6w"]
+
+[ext_resource type="Script" uid="uid://km8o7mxx6it5" path="res://Player/snake.gd" id="1_ie24v"]
+[ext_resource type="Texture2D" uid="uid://bpm6npec8bpye" path="res://Player/Snake_Head.png" id="1_y4se5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7hf7"]
+size = Vector2(32, 38)
+
+[node name="Snake_Head" type="CharacterBody2D" unique_id=209583005]
+script = ExtResource("1_ie24v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1774383177]
+position = Vector2(16, 19)
+shape = SubResource("RectangleShape2D_s7hf7")
+debug_color = Color(2.4065375e-06, 0.76662743, 0.7670186, 0.41960785)
+
+[node name="SnakeHead" type="Sprite2D" parent="." unique_id=137402993]
+texture_filter = 1
+position = Vector2(16, 19)
+texture = ExtResource("1_y4se5")

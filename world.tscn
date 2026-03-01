@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://60wfac6l527w"]
+
+[ext_resource type="PackedScene" uid="uid://bodg0vs3pki6w" path="res://Player/snake.tscn" id="1_f3sb7"]
+[ext_resource type="Texture2D" uid="uid://cfl101y6j2u4b" path="res://Play_Area.png" id="1_fj7yv"]
+
+[node name="World" type="Node" unique_id=780528072]
+
+[node name="PlayArea" type="Sprite2D" parent="." unique_id=1578879033]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(43, 130)
+texture = ExtResource("1_fj7yv")
+offset = Vector2(208, 208)
+
+[node name="Snake_Head" parent="." unique_id=209583005 instance=ExtResource("1_f3sb7")]
+position = Vector2(171, 189)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1473693718]
+position = Vector2(0, 1)
+anchor_mode = 0
