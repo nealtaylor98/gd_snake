@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://60wfac6l527w"]
 
+[ext_resource type="Script" uid="uid://w2kibqhybj2p" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://bodg0vs3pki6w" path="res://Player/snake.tscn" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://cfl101y6j2u4b" path="res://Play_Area.png" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://8tyi75dajfay" path="res://Collectibles/fruit.tscn" id="4_036b0"]
+[ext_resource type="AudioStream" uid="uid://blnaiej5b0dt7" path="res://Sound/Eat_Fruit.wav" id="5_036b0"]
 
 [node name="World" type="Node" unique_id=780528072]
+script = ExtResource("1_aqk2v")
 
 [node name="PlayArea" type="Sprite2D" parent="." unique_id=1578879033]
 texture_filter = 1
@@ -18,3 +22,11 @@ position = Vector2(171, 189)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1473693718]
 position = Vector2(0, 1)
 anchor_mode = 0
+
+[node name="Fruit" parent="." unique_id=898897289 instance=ExtResource("4_036b0")]
+position = Vector2(316, 400)
+
+[node name="EatFruit" type="AudioStreamPlayer" parent="Fruit" unique_id=868937832]
+stream = ExtResource("5_036b0")
+
+[connection signal="fruit_collected" from="Fruit" to="." method="_on_fruit_fruit_collected"]
